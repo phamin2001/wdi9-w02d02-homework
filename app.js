@@ -121,9 +121,14 @@ function game() {
         let i = 0;
         for (; i < 3; i++) {
             console.log("Player card is: "); console.log(playerRandomCards[i]);
+            
            
-            let playerDamage = playerRandomCards[i].damage; console.log(playerDamage);
-            let computerDamage = computerRandomCards[createRandomNumber(computerRandomCards)].damage; console.log(computerDamage);
+            let playerDamage = playerRandomCards[i].damage; 
+            let randNum = createRandomNumber(computerRandomCards);
+            let computerDamage = computerRandomCards[randNum].damage; 
+            console.log("Computer card is: "); console.log(computerRandomCards[randNum]);
+            console.log("Player damage is: " + playerDamage);
+            console.log("Computer damage is: " + computerDamage);
             
             if(playerDamage > computerDamage) {
                 score.player ++;
@@ -136,10 +141,19 @@ function game() {
             console.log(`Rounds Won round ${round + 1}`); console.log(roundsWon);
 
             let j = i + 1;
+            // player's cards left in his hand
             if(j < playerRandomCards.length) {
                 console.log("Player's cards left: ");
                 for(j; j < playerRandomCards.length; j++) {
                     console.log(playerRandomCards[j]);
+                }
+
+                // computer's cards left in its hand
+                console.log("Computer's cards left: ");
+                for(let c = 0; c < computerRandomCards.length; c++) {
+                    if(c != randNum) {
+                        console.log(computerRandomCards[c]);
+                    }
                 }
             }
         }
