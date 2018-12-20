@@ -86,9 +86,6 @@ function createRandomNumber(array) {
 //createArrayOfCardsForGame(arrayOfCards); // OK
 
 function createRandomCardsForPlayers(arrayOfCards) {
-    
-
-    
     for (let x = 0; x < 3; x++) {
         let randomNum = createRandomNumber(arrayOfCards);
         playerRandomCards.push(arrayOfCards.splice(randomNum, 1)[0]);
@@ -161,7 +158,6 @@ function game() {
         playerRandomCards.length = 0;
         computerRandomCards.length = 0;
     }
-    
 }
 
 function runTheGame() {
