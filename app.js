@@ -101,7 +101,7 @@ function createRandomCardsForPlayers(arrayOfCards) {
 }
 
 
-function game(playerRandomCards, computerRandomCards) {
+function game() {
     const score = {
         player: 0,
         computer: 0
@@ -150,4 +150,14 @@ function game(playerRandomCards, computerRandomCards) {
     
 }
 
-game(playerRandomCards, computerRandomCards);
+function runTheGame() {
+    console.log(arrayOfCards.length);
+    while(arrayOfCards.length > 0 && (arrayOfCards.length % 6 === 0 || arrayOfCards.length / 6 >= 1)){
+        game();
+    }
+    console.log("Game is over!!");
+}
+
+runTheGame();
+
+
